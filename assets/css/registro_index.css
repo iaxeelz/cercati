@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #60a5fa
+    );
+
+    color:white;
+}
+
+.container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:40px 20px;
+}
+
+.back-btn{
+
+    color:white;
+
+    text-decoration:none;
+
+    display:inline-flex;
+
+    gap:10px;
+
+    align-items:center;
+
+    margin-bottom:30px;
+}
+
+.header{
+
+    text-align:center;
+
+    margin-bottom:60px;
+}
+
+.header h1{
+
+    font-size:3rem;
+
+    margin-bottom:10px;
+}
+
+.header p{
+
+    opacity:.9;
+}
+
+.cards{
+
+    display:flex;
+
+    gap:30px;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+}
+
+.card{
+
+    background:white;
+
+    color:#1e293b;
+
+    width:450px;
+
+    border-radius:25px;
+
+    padding:30px;
+
+    box-shadow:
+    0 15px 30px rgba(0,0,0,.12);
+
+    transition:.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+}
+
+.icon{
+
+    width:70px;
+    height:70px;
+
+    border-radius:18px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+
+    font-size:28px;
+
+    margin-bottom:25px;
+}
+
+.blue{
+
+    background:#3b82f6;
+}
+
+.orange{
+
+    background:#ff7a00;
+}
+
+.card h2{
+
+    margin-bottom:20px;
+}
+
+.card ul{
+
+    list-style:none;
+
+    margin-bottom:30px;
+}
+
+.card ul li{
+
+    margin-bottom:15px;
+
+    color:#64748b;
+
+    position:relative;
+
+    padding-left:20px;
+}
+
+.card ul li::before{
+
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+}
+
+.buyer ul li::before{
+
+    color:#2563eb;
+}
+
+.seller ul li::before{
+
+    color:#ff7a00;
+}
+
+.card a{
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+.buyer a{
+
+    color:#2563eb;
+}
+
+.seller a{
+
+    color:#ff7a00;
+}
+
+@media(max-width:992px){
+
+    .cards{
+
+        flex-direction:column;
+
+        align-items:center;
+    }
+
+    .card{
+
+        width:100%;
+        max-width:500px;
+    }
+}
+
+@media(max-width:576px){
+
+    .header h1{
+
+        font-size:2rem;
+    }
+
+    .card{
+
+        padding:25px;
+    }
+}

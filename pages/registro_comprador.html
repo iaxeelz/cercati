@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CercaTi - Crear cuenta de comprador</title>
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/registro_comprador.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="register-modal" id="registerModal">
+        
+        <!-- Título principal -->
+        <div class="register-header">
+            <h1 class="register-title">CercaTi</h1>
+            <h2 class="register-subtitle">Crear cuenta de comprador</h2>
+            <p class="register-description">Completa tus datos para comenzar</p>
+        </div>
+
+        <form id="registerFormComprador" class="register-form active">
+            
+            <div class="profile-photo-container">
+                <div class="profile-photo-circle" id="profilePhotoPreview">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23e5e7eb'/%3E%3Ctext x='50' y='58' text-anchor='middle' font-family='Arial' font-size='40' fill='%239ca3af'%3E👤%3C/text%3E%3C/svg%3E" 
+                         alt="Foto de perfil" 
+                         id="profilePhotoImg">
+                    <div class="photo-overlay">
+                        <i class="fas fa-camera"></i>
+                        <span>Subir foto</span>
+                    </div>
+                </div>
+                <input type="file" id="profilePhotoInput" accept="image/*" style="display: none;">
+                <small class="photo-hint">Haz clic para subir tu foto de perfil</small>
+            </div>
+
+            <div class="form-group">
+                <label for="compradorNombre" class="form-label">Nombre completo</label>
+                <input 
+                    type="text" 
+                    id="compradorNombre" 
+                    class="form-input"
+                    placeholder="Ingresa tu nombre"
+                    required
+                >
+                <i class="fas fa-user form-icon"></i>
+                <div class="error-message" id="errorNombre"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="compradorEmail" class="form-label">Correo electrónico</label>
+                <input 
+                    type="email" 
+                    id="compradorEmail" 
+                    class="form-input"
+                    placeholder="correo@ejemplo.com"
+                    required
+                >
+                <i class="fas fa-envelope form-icon"></i>
+                <div class="error-message" id="errorEmail"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="compradorTelefono" class="form-label">Teléfono</label>
+                <input 
+                    type="tel" 
+                    id="compradorTelefono" 
+                    class="form-input"
+                    placeholder="+51 999 888 777"
+                    required
+                >
+                <i class="fas fa-phone form-icon"></i>
+                <div class="error-message" id="errorTelefono"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="compradorPassword" class="form-label">Contraseña</label>
+                <div class="password-input-wrapper">
+                    <input 
+                        type="password" 
+                        id="compradorPassword" 
+                        class="form-input"
+                        placeholder="Mínimo 8 caracteres"
+                        minlength="8"
+                        required
+                    >
+                    <i class="fas fa-eye toggle-password" id="togglePassword1"></i>
+                </div>
+                <div class="password-strength" id="passwordStrength">
+                    <span class="strength-bar"></span>
+                    <span class="strength-bar"></span>
+                    <span class="strength-bar"></span>
+                    <span class="strength-bar"></span>
+                    <span class="strength-text"></span>
+                </div>
+                <div class="error-message" id="errorPassword"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="compradorConfirmPassword" class="form-label">Confirmar contraseña</label>
+                <div class="password-input-wrapper">
+                    <input 
+                        type="password" 
+                        id="compradorConfirmPassword" 
+                        class="form-input"
+                        placeholder="Repite tu contraseña"
+                        required
+                    >
+                    <i class="fas fa-eye toggle-password" id="togglePassword2"></i>
+                </div>
+                <div class="error-message" id="errorConfirmPassword"></div>
+            </div>
+
+            <div class="form-check" id="terminosContainer">
+                <input type="checkbox" id="terminosComprador" required>
+                <label for="terminosComprador">
+                    Acepto los <a href="#" class="link">Términos y Condiciones</a> y la 
+                    <a href="#" class="link">Política de Privacidad</a>
+                </label>
+            </div>
+
+            <button type="submit" class="btn-register">
+                <i class="fas fa-user-plus"></i>
+                Crear cuenta
+            </button>
+
+            <div class="divider">
+                <span>o continúa con</span>
+            </div>
+
+            <button type="button" class="btn-google" id="googleRegister">
+                <!-- Icono SVG de Google -->
+                <span class="google-icon">
+                    <svg viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="matrix(1, 0, 0, 1, 27.009001, -39.238998)">
+                            <path fill="#4285F4" d="M -3.264 51.509 C -3.264 50.719 -3.334 49.969 -3.454 49.239 L -14.754 49.239 L -14.754 53.749 L -8.284 53.749 C -8.574 55.229 -9.424 56.479 -10.684 57.329 L -10.684 60.329 L -6.824 60.329 C -4.564 58.239 -3.264 55.159 -3.264 51.509 Z"/>
+                            <path fill="#34A853" d="M -14.754 63.239 C -11.514 63.239 -8.804 62.159 -6.824 60.329 L -10.684 57.329 C -11.764 58.049 -13.134 58.489 -14.754 58.489 C -17.884 58.489 -20.534 56.379 -21.484 53.529 L -25.464 53.529 L -25.464 56.619 C -23.494 60.539 -19.444 63.239 -14.754 63.239 Z"/>
+                            <path fill="#FBBC05" d="M -21.484 53.529 C -21.734 52.809 -21.864 52.039 -21.864 51.239 C -21.864 50.439 -21.724 49.669 -21.484 48.949 L -21.484 45.859 L -25.464 45.859 C -26.284 47.479 -26.754 49.299 -26.754 51.239 C -26.754 53.179 -26.284 54.999 -25.464 56.619 L -21.484 53.529 Z"/>
+                            <path fill="#EA4335" d="M -14.754 43.989 C -12.984 43.989 -11.404 44.599 -10.154 45.789 L -6.734 42.369 C -8.804 40.429 -11.514 39.239 -14.754 39.239 C -19.444 39.239 -23.494 41.939 -25.464 45.859 L -21.484 48.949 C -20.534 46.099 -17.884 43.989 -14.754 43.989 Z"/>
+                        </g>
+                    </svg>
+                </span>
+                Google
+            </button>
+
+            <p class="register-footer">
+                ¿Ya tienes una cuenta? 
+                <a href="#" class="link" id="switchToLogin">Inicia sesión</a>
+            </p>
+        </form>
+    </div>
+<script src="../assets/js/registro_comprador.js"></script>
+
+</body>
+</html>

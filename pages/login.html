@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión | CERCATI</title>
+
+    <link rel="stylesheet" href="../assets/css/login.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- VOLVER -->
+        <a href="../index.html" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i>
+            Volver
+        </a>
+
+        <!-- CARD LOGIN -->
+        <div class="login-card">
+
+            <!-- LOGO -->
+            <div class="logo">
+
+                <div class="logo-icon">
+                    📍
+                </div>
+
+                <h1>CercaTi</h1>
+
+            </div>
+
+            <h2>Bienvenido de nuevo</h2>
+
+            <p class="subtitle">
+                Inicia sesión para continuar
+            </p>
+
+            <!-- FORMULARIO -->
+            <form id="loginForm">
+
+                <!-- EMAIL -->
+                <label>Correo electrónico</label>
+
+                <div class="input-group">
+
+                    <i class="fa-regular fa-envelope"></i>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="correo@ejemplo.com"
+                        required
+                    >
+
+                </div>
+
+                <!-- PASSWORD -->
+                <label>Contraseña</label>
+
+                <div class="input-group">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Tu contraseña"
+                        required
+                    >
+
+                </div>
+
+                <!-- OPCIONES -->
+                <div class="options">
+
+                    <div class="remember">
+
+                        <input type="checkbox">
+
+                        <span>Recordarme</span>
+
+                    </div>
+
+                    <a href="#">
+                        ¿Olvidaste tu contraseña?
+                    </a>
+
+                </div>
+
+                <!-- BOTON -->
+                <button type="submit" class="btn-login">
+                    Iniciar sesión
+                </button>
+
+            </form>
+
+            <!-- DIVISOR -->
+            <div class="divider">
+                <span>o continúa con</span>
+            </div>
+
+            <!-- GOOGLE -->
+            <button class="btn-google">
+
+                <i class="fa-brands fa-google"></i>
+
+                Google
+
+            </button>
+
+            <!-- REGISTRO -->
+            <p class="register">
+
+                ¿No tienes una cuenta?
+
+                <a href="registro.html">
+                    Regístrate
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+<script src="assets/js/login.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,625 @@
+           * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f7fa;
+            color: #1a2332;
+        }
+
+        .header {
+            background: #ffffff;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 14px 0;
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #1a237e, #2563eb);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1a237e;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-sub {
+            font-size: 12px;
+            color: #6b7280;
+            font-weight: 400;
+            display: block;
+            margin-top: -2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-menu a {
+            padding: 8px 16px;
+            color: #4b5563;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            background: #f3f4f6;
+            color: #1a237e;
+        }
+
+        .nav-menu a.active {
+            background: #2563eb;
+            color: white;
+        }
+
+        .nav-menu a i {
+            margin-right: 6px;
+        }
+
+        .btn-publicar {
+            background: #2563eb;
+            color: white !important;
+            padding: 8px 20px !important;
+            border-radius: 10px !important;
+            font-weight: 600 !important;
+        }
+
+        .btn-publicar:hover {
+            background: #1d4ed8 !important;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .payment-hero {
+            background: linear-gradient(135deg, #1a237e, #2563eb);
+            padding: 50px 24px 40px;
+            text-align: center;
+            color: white;
+        }
+
+        .payment-hero h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .payment-hero p {
+            font-size: 16px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a2332;
+            margin-bottom: 8px;
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: #6b7280;
+        }
+
+        /* ============================================ */
+        /* MÉTODOS DE PAGO - GRID SIMÉTRICO            */
+        /* ============================================ */
+
+        .payment-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .payment-card {
+            background: white;
+            border-radius: 20px;
+            padding: 32px 28px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #f0f0f0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .payment-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2563eb, #60a5fa);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .payment-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 50px rgba(37, 99, 235, 0.12);
+            border-color: #2563eb;
+        }
+
+        .payment-card:hover::before {
+            opacity: 1;
+        }
+
+        .payment-card .card-icon {
+            font-size: 48px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .payment-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a2332;
+            margin-bottom: 4px;
+        }
+
+        .payment-card .card-subtitle {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 16px;
+        }
+
+        .payment-card .benefits {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+            flex: 1;
+        }
+
+        .payment-card .benefits li {
+            padding: 6px 0;
+            font-size: 14px;
+            color: #4b5563;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .payment-card .benefits li i {
+            color: #22c55e;
+            font-size: 16px;
+            width: 20px;
+        }
+
+        .payment-card .btn-payment {
+            display: inline-block;
+            padding: 12px 32px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+            width: 100%;
+        }
+
+        .payment-card .btn-payment:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        /* ============================================ */
+        /* TARJETA DE CRÉDITO - DISEÑO ESPECIAL        */
+        /* ============================================ */
+
+        .credit-card-visual {
+            background: linear-gradient(135deg, #1a237e, #2563eb);
+            border-radius: 16px;
+            padding: 24px 28px;
+            margin: 0 0 16px 0;
+            color: white;
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .credit-card-visual::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .credit-card-visual::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            left: -20%;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 50%;
+        }
+
+        .credit-card-visual .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            z-index: 1;
+        }
+
+        .credit-card-visual .card-top .card-chip {
+            font-size: 32px;
+        }
+
+        .credit-card-visual .card-top .card-network {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .credit-card-visual .card-number {
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            margin: 12px 0 8px 0;
+            position: relative;
+            z-index: 1;
+            font-family: 'Courier New', monospace;
+        }
+
+        .credit-card-visual .card-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            position: relative;
+            z-index: 1;
+        }
+
+        .credit-card-visual .card-bottom .card-holder {
+            font-size: 12px;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .credit-card-visual .card-bottom .card-holder strong {
+            display: block;
+            font-size: 14px;
+            opacity: 1;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .credit-card-visual .card-bottom .card-expiry {
+            font-size: 12px;
+            text-align: right;
+            opacity: 0.8;
+        }
+
+        .credit-card-visual .card-bottom .card-expiry strong {
+            display: block;
+            font-size: 14px;
+            opacity: 1;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        /* ============================================ */
+        /* BADGE DE SEGURIDAD                          */
+        /* ============================================ */
+
+        .security-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #dcfce7;
+            color: #16a34a;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-top: 12px;
+        }
+
+        .security-badge i {
+            font-size: 16px;
+        }
+
+        /* ============================================ */
+        /* SECCIÓN DE CARACTERÍSTICAS                  */
+        /* ============================================ */
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: 30px auto 0;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 24px 16px;
+            background: white;
+            border-radius: 16px;
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            border-color: #2563eb;
+        }
+
+        .feature-item .feature-icon {
+            font-size: 36px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .feature-item h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a2332;
+            margin-bottom: 4px;
+        }
+
+        .feature-item p {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        /* ============================================ */
+        /* CTA FINAL DE SOPORTE                        */
+        /* ============================================ */
+
+        .support-cta {
+            background: linear-gradient(135deg, #1a237e, #2563eb);
+            border-radius: 20px;
+            padding: 48px 40px;
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .support-cta h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .support-cta p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+
+        .support-cta .btn-support {
+            display: inline-block;
+            padding: 14px 40px;
+            background: #25D366;
+            color: white;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .support-cta .btn-support:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .support-cta .btn-support i {
+            margin-right: 8px;
+        }
+
+        /* ============================================ */
+        /* FOOTER                                      */
+        /* ============================================ */
+
+        .footer {
+            background: #1a2332;
+            color: #9ca3af;
+            padding: 40px 24px 24px;
+            margin-top: 40px;
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+        }
+
+        .footer h4 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .footer a {
+            color: #9ca3af;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: white;
+            transform: translateX(4px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 24px;
+            margin-top: 24px;
+            border-top: 1px solid #2d3748;
+            font-size: 14px;
+        }
+
+        /* ============================================ */
+        /* RESPONSIVE                                  */
+        /* ============================================ */
+
+        @media (max-width: 1024px) {
+            .nav-menu a span {
+                display: none;
+            }
+            .nav-menu a i {
+                margin-right: 0;
+                font-size: 18px;
+            }
+            .btn-publicar span {
+                display: inline !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+            
+            .nav-menu {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .payment-hero h1 {
+                font-size: 28px;
+            }
+
+            .payment-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+
+            .credit-card-visual {
+                min-height: 130px;
+                padding: 18px 20px;
+            }
+
+            .credit-card-visual .card-number {
+                font-size: 18px;
+                letter-spacing: 2px;
+            }
+
+            .support-cta {
+                padding: 32px 24px;
+            }
+
+            .support-cta h2 {
+                font-size: 22px;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 500px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .payment-grid {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+            }
+
+            .payment-hero h1 {
+                font-size: 24px;
+            }
+
+            .credit-card-visual .card-number {
+                font-size: 16px;
+                letter-spacing: 1px;
+            }
+
+            .credit-card-visual {
+                min-height: 110px;
+                padding: 14px 16px;
+            }
+
+            .support-cta h2 {
+                font-size: 20px;
+            }
+
+            .payment-card {
+                padding: 24px 20px;
+            }
+        }

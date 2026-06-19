@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CercaTi - Tu ciudad, tus negocios</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <link href="../assets/css/dashboard.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <a href="../pages/dashboard.html" class="logo">
+                <div class="logo-icon">C</div>
+                <div>
+                    <span class="logo-text">CercaTi</span>
+                    <span class="logo-sub">Tu ciudad, tus negocios</span>
+                </div>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="../pages/dashboard.html"><i class="fas fa-home"></i> <span>Inicio</span></a>
+                <a href="../pages/comunidad.html"><i class="fas fa-users"></i> <span>Comunidad</span></a>
+                <a href="../pages/metodos_pago.html"><i class="fas fa-credit-card"></i> <span>Métodos de Pago</span></a>
+                <a href="guia.html" class="active"><i class="fas fa-book"></i> <span>Guía</span></a>
+                <a href="#impulsa"><i class="fas fa-rocket"></i> <span>ImpulsaTuNegocio</span></a>
+                <a href="#" class="btn-publicar"><i class="fas fa-plus"></i> <span>Publicar</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Conectando emprendedores en Chimbote</h1>
+        <p>Descubre negocios increíbles cerca de ti</p>
+        <p class="hero-sub">Apoya a emprendedores locales y encuentra productos únicos en Chimbote</p>
+        
+        <div class="search-box">
+            <input type="text" placeholder="¿Qué estás buscando hoy?">
+            <select>
+                <option>Chimbote</option>
+                <option>Nuevo Chimbote</option>
+                <option>Coishco</option>
+                <option>Santa</option>
+            </select>
+            <button><i class="fas fa-search"></i> Buscar</button>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Categorías</h2>
+            <a href="#">Ver todas →</a>
+        </div>
+        
+        <div class="categories-grid">
+            <div class="category-card">
+                <span class="icon">🍽️</span>
+                <div class="name">Comida</div>
+                <div class="count">340 negocios</div>
+            </div>
+            <div class="category-card">
+                <span class="icon">👗</span>
+                <div class="name">Ropa</div>
+                <div class="count">280 negocios</div>
+            </div>
+            <div class="category-card">
+                <span class="icon">🎨</span>
+                <div class="name">Artesanía</div>
+                <div class="count">150 negocios</div>
+            </div>
+            <div class="category-card">
+                <span class="icon">💻</span>
+                <div class="name">Tecnología</div>
+                <div class="count">120 negocios</div>
+            </div>
+            <div class="category-card">
+                <span class="icon">💄</span>
+                <div class="name">Belleza</div>
+                <div class="count">220 negocios</div>
+            </div>
+            <div class="category-card">
+                <span class="icon">🔧</span>
+                <div class="name">Servicios</div>
+                <div class="count">190 negocios</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <div>
+                <h2>Negocios cerca de ti</h2>
+                <p style="color: #6b7280; font-size: 14px;">Emprendedores locales en Chimbote</p>
+            </div>
+            <a href="#">Ver todos →</a>
+        </div>
+        
+        <div class="business-grid">
+            <div class="business-card">
+                <div class="image">🦐</div>
+                <div class="body">
+                    <span class="badge badge-trending">Tendencia</span>
+                    <span class="badge badge-local">Emprendedor local</span>
+                    <h3>Sabores del Mar</h3>
+                    <div class="category">Comida marina fresca del día</div>
+                    <div class="rating">⭐ 4.8 <span>(127)</span></div>
+                    <div class="location"><i class="fas fa-map-pin"></i> Chimbote</div>
+                </div>
+            </div>
+            
+            <div class="business-card">
+                <div class="image">🧵</div>
+                <div class="body">
+                    <span class="badge badge-local">Emprendedor local</span>
+                    <h3>Textiles Andinos</h3>
+                    <div class="category">Ropa artesanal peruana</div>
+                    <div class="rating">⭐ 4.9 <span>(89)</span></div>
+                    <div class="location"><i class="fas fa-map-pin"></i> Nuevo Chimbote</div>
+                </div>
+            </div>
+            
+            <div class="business-card">
+                <div class="image">🪵</div>
+                <div class="body">
+                    <span class="badge badge-recommended">Negocio recomendado</span>
+                    <h3>Arte en Madera</h3>
+                    <div class="category">Artesanías talladas a mano</div>
+                    <div class="rating">⭐ 5.0 <span>(64)</span></div>
+                    <div class="location"><i class="fas fa-map-pin"></i> Chimbote</div>
+                </div>
+            </div>
+            
+            <div class="business-card">
+                <div class="image">💻</div>
+                <div class="body">
+                    <span class="badge badge-local">Emprendedor local</span>
+                    <h3>Tech Solutions</h3>
+                    <div class="category">Reparación y venta</div>
+                    <div class="rating">⭐ 4.7 <span>(43)</span></div>
+                    <div class="location"><i class="fas fa-map-pin"></i> Coishco</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="comunidad">
+        <div class="section-header">
+            <div>
+                <h2>Conoce a nuestra comunidad</h2>
+                <p style="color: #6b7280; font-size: 14px;">Historias reales de emprendedores locales</p>
+            </div>
+            <a href="#">Ver más historias →</a>
+        </div>
+        
+        <div class="stories-grid">
+            <div class="story-card">
+                <div class="avatar">M</div>
+                <h4>María</h4>
+                <p>De vender en mi casa a 200+ clientes</p>
+                <a href="#">Leer historia <i class="fas fa-arrow-right"></i></a>
+                
+                <div class="story-expand">
+                    <div class="tags">
+                        <span>#Artesanía</span>
+                        <span>#Textil</span>
+                        <span>#Perú</span>
+                    </div>
+                    <div class="stats">
+                        <span><i class="fas fa-heart"></i> 245</span>
+                        <span><i class="fas fa-comment"></i> 32</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="story-card">
+                <div class="avatar">C</div>
+                <h4>Carlos</h4>
+                <p>Técnico local ahora conocido en toda la zona</p>
+                <a href="#">Leer historia <i class="fas fa-arrow-right"></i></a>
+                
+                <div class="story-expand">
+                    <div class="tags">
+                        <span>#Tecnología</span>
+                        <span>#Reparación</span>
+                        <span>#Local</span>
+                    </div>
+                    <div class="stats">
+                        <span><i class="fas fa-heart"></i> 189</span>
+                        <span><i class="fas fa-comment"></i> 28</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="story-card">
+                <div class="avatar">A</div>
+                <h4>Ana</h4>
+                <p>Artesanía peruana llegando a todo el país</p>
+                <a href="#">Leer historia <i class="fas fa-arrow-right"></i></a>
+                
+                <div class="story-expand">
+                    <div class="tags">
+                        <span>#Artesanía</span>
+                        <span>#Madera</span>
+                        <span>#Exportación</span>
+                    </div>
+                    <div class="stats">
+                        <span><i class="fas fa-heart"></i> 312</span>
+                        <span><i class="fas fa-comment"></i> 45</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <div>
+                <h2>Productos populares</h2>
+                <p style="color: #6b7280; font-size: 14px;">Los más vendidos de la semana</p>
+            </div>
+            <a href="#">Ver todos →</a>
+        </div>
+        
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="image">🍤</div>
+                <div class="body">
+                    <h4>Ceviche mixto</h4>
+                    <div class="store">Sabores del Mar</div>
+                    <div class="rating">⭐ 4.8 (127)</div>
+                    <div class="price">S/ 25</div>
+                    <a href="#" class="btn-buy">Comprar ahora</a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="image">👕</div>
+                <div class="body">
+                    <h4>Polo bordado artesanal</h4>
+                    <div class="store">Textiles Andinos</div>
+                    <div class="rating">⭐ 4.9 (89)</div>
+                    <div class="price">S/ 45</div>
+                    <a href="#" class="btn-buy">Comprar ahora</a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="image">🪵</div>
+                <div class="body">
+                    <h4>Tallado en madera</h4>
+                    <div class="store">Arte en Madera</div>
+                    <div class="rating">⭐ 5.0 (64)</div>
+                    <div class="price">S/ 150</div>
+                    <a href="#" class="btn-buy">Comprar ahora</a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="image">💆</div>
+                <div class="body">
+                    <h4>Tratamiento facial</h4>
+                    <div class="store">Belleza Natural</div>
+                    <div class="rating">⭐ 4.9 (56)</div>
+                    <div class="price">S/ 70</div>
+                    <a href="#" class="btn-buy">Comprar ahora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="pagos">
+        <div class="payment-section">
+            <h2 style="font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 4px;">Múltiples formas de pagar</h2>
+            <p style="text-align: center; color: #6b7280; margin-bottom: 20px;">Elige el método que prefieras, rápido y seguro</p>
+            
+            <div class="payment-grid">
+                <div class="payment-method">
+                    <span class="icon">📱</span>
+                    <div class="name">Yape</div>
+                    <div class="desc">Instántaneo</div>
+                </div>
+                <div class="payment-method">
+                    <span class="icon">🏦</span>
+                    <div class="name">Plin</div>
+                    <div class="desc">Todos los bancos</div>
+                </div>
+                <div class="payment-method">
+                    <span class="icon">💳</span>
+                    <div class="name">Tarjetas</div>
+                    <div class="desc">Visa, Mastercard</div>
+                </div>
+                <div class="payment-method">
+                    <span class="icon">💰</span>
+                    <div class="name">Efectivo</div>
+                    <div class="desc">Contra entregas</div>
+                </div>
+            </div>
+            
+            <div class="secure-badge">
+                <i class="fas fa-shield-alt"></i> Todos los pagos están protegidos y son 100% seguros
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="mapa">
+        <div class="map-section">
+            <h2 style="font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 4px;">Encuentra emprendedores cerca de ti</h2>
+            <p style="text-align: center; color: #6b7280; margin-bottom: 16px;">Ubicaciones verificadas en Chimbote y alrededores</p>
+            
+            <!-- BUSCADOR DEL MAPA -->
+            <div class="map-search-container">
+                <div class="search-input-wrapper">
+                    <input type="text" id="mapSearchInput" placeholder="Buscar negocio por nombre, categoría o ubicación...">
+                    <button class="btn-search-map" id="mapSearchBtn">
+                        <i class="fas fa-search"></i> Buscar
+                    </button>
+                </div>
+                <button class="btn-clear-search" id="clearSearchBtn">
+                    <i class="fas fa-times"></i> Limpiar
+                </button>
+            </div>
+            
+            <div class="map-results-info" id="mapResultsInfo">
+                <i class="fas fa-info-circle"></i> Mostrando <strong id="resultsCount">0</strong> resultados
+            </div>
+            
+            <div class="map-controls">
+                <button class="active" data-zone="all">📍 Todos</button>
+                <button data-zone="chimbote">📍 Chimbote</button>
+                <button data-zone="nuevo-chimbote">📍 Nuevo Chimbote</button>
+                <button data-zone="coishco">📍 Coishco</button>
+                <button data-zone="santa">📍 Santa</button>
+                <button class="btn-google" onclick="abrirGoogleMaps()">
+                    <i class="fas fa-map-marked-alt"></i> Ver en Google Maps
+                </button>
+            </div>
+            
+            <div id="map"></div>
+            
+            <div class="zone-stats">
+                <div class="zone-stat" data-zone="chimbote">
+                    <div class="info">
+                        <h4>📍 Chimbote</h4>
+                        <p>Centro de Plazas de Armas</p>
+                    </div>
+                    <span class="count">5</span>
+                </div>
+                <div class="zone-stat" data-zone="nuevo-chimbote">
+                    <div class="info">
+                        <h4>📍 Nuevo Chimbote</h4>
+                        <p>Zona comercial - Av. Pacífico</p>
+                    </div>
+                    <span class="count">4</span>
+                </div>
+                <div class="zone-stat" data-zone="coishco">
+                    <div class="info">
+                        <h4>📍 Coishco</h4>
+                        <p>Zona residencial</p>
+                    </div>
+                    <span class="count">2</span>
+                </div>
+                <div class="zone-stat" data-zone="santa">
+                    <div class="info">
+                        <h4>📍 Santa</h4>
+                        <p>Puerto + Coish</p>
+                    </div>
+                    <span class="count">1</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="cta-section">
+            <h2>¿Tienes un negocio local?</h2>
+            <p>Únete a CercaTi y haz que miles de personas descubran lo que ofreces</p>
+            <a href="#" class="btn-cta"><i class="fas fa-store"></i> Registra tu negocio gratis →</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div>
+                <h4>CercaTi</h4>
+                <p style="font-size: 14px; margin-bottom: 8px;">Tu ciudad, tus negocios</p>
+                <p style="font-size: 13px;">Conectando emprendedores locales</p>
+            </div>
+            <div>
+                <h4>Secciones</h4>
+                <a href="../pages/dashboard.html">Inicio</a>
+                <a href="../pages/comunidad.html">Comunidad</a>
+                <a href="../pages/metodos_pago.html">Métodos de Pago</a>
+                <a href="../pages/dashboard.html">Guía</a>
+            </div>
+            <div>
+                <h4>Para emprendedores</h4>
+                <a href="#">Impulsa tu Negocio</a>
+                <a href="#">Publicar</a>
+                <a href="#">Registrar Negocio</a>
+                <a href="#">Panel de Control</a>
+            </div>
+            <div>
+                <h4>Contacto</h4>
+                <a href="#"><i class="fas fa-envelope"></i> info@cercati.pe</a>
+                <a href="#"><i class="fas fa-phone"></i> +51 999 888 777</a>
+                <a href="#"><i class="fas fa-map-pin"></i> Chimbote, Perú</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 CercaTi. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+
+</body>
+</html>

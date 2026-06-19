@@ -1,0 +1,497 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f7fa;
+            color: #1a2332;
+        }
+
+        .header {
+            background: #ffffff;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 14px 0;
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #1a237e, #2563eb);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1a237e;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-sub {
+            font-size: 12px;
+            color: #6b7280;
+            font-weight: 400;
+            display: block;
+            margin-top: -2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-menu a {
+            padding: 8px 16px;
+            color: #4b5563;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            background: #f3f4f6;
+            color: #1a237e;
+        }
+
+        .nav-menu a.active {
+            background: #2563eb;
+            color: white;
+        }
+
+        .nav-menu a i {
+            margin-right: 6px;
+        }
+
+        .btn-publicar {
+            background: #2563eb;
+            color: white !important;
+            padding: 8px 20px !important;
+            border-radius: 10px !important;
+            font-weight: 600 !important;
+        }
+
+        .btn-publicar:hover {
+            background: #1d4ed8 !important;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        /* ============================================ */
+        /* HERO GUÍA                                   */
+        /* ============================================ */
+
+        .hero-guia {
+            background: linear-gradient(135deg, #1a237e, #2563eb);
+            padding: 60px 24px 50px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-guia h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+
+        .hero-guia p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* ============================================ */
+        /* SECCIÓN DE PASOS                            */
+        /* ============================================ */
+
+        .section {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a2332;
+            margin-bottom: 8px;
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ============================================ */
+        /* PASOS - GRID                                */
+        /* ============================================ */
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .step-card {
+            background: white;
+            border-radius: 20px;
+            padding: 32px 28px;
+            border: 1px solid #f0f0f0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2563eb, #60a5fa);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 50px rgba(37, 99, 235, 0.08);
+            border-color: #2563eb;
+        }
+
+        .step-card:hover::before {
+            opacity: 1;
+        }
+
+        .step-card .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #2563eb, #1a237e);
+            color: white;
+            border-radius: 50%;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .step-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a2332;
+            margin-bottom: 4px;
+        }
+
+        .step-card .step-subtitle {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 16px;
+        }
+
+        .step-card .step-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .step-card .step-list li {
+            padding: 6px 0;
+            font-size: 14px;
+            color: #4b5563;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step-card .step-list li i {
+            color: #22c55e;
+            font-size: 16px;
+            width: 20px;
+        }
+
+        .step-card .step-list li .pending {
+            color: #f59e0b;
+        }
+
+        .step-card .step-icon {
+            font-size: 48px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* ============================================ */
+        /* CONSEJOS ÚTILES                             */
+        /* ============================================ */
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .tip-card {
+            background: white;
+            border-radius: 16px;
+            padding: 28px 24px;
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            border-color: #2563eb;
+        }
+
+        .tip-card .tip-icon {
+            font-size: 32px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .tip-card h4 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a2332;
+            margin-bottom: 6px;
+        }
+
+        .tip-card p {
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* ============================================ */
+        /* CTA FINAL                                   */
+        /* ============================================ */
+
+        .cta-guia {
+            background: linear-gradient(135deg, #1a237e, #2563eb);
+            border-radius: 20px;
+            padding: 48px 40px;
+            text-align: center;
+            color: white;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .cta-guia h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .cta-guia p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 24px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-guia .btn-cta {
+            display: inline-block;
+            padding: 14px 40px;
+            background: white;
+            color: #1a237e;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-guia .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        /* ============================================ */
+        /* FOOTER                                      */
+        /* ============================================ */
+
+        .footer {
+            background: #1a2332;
+            color: #9ca3af;
+            padding: 40px 24px 24px;
+            margin-top: 40px;
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+        }
+
+        .footer h4 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .footer a {
+            color: #9ca3af;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: white;
+            transform: translateX(4px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 24px;
+            margin-top: 24px;
+            border-top: 1px solid #2d3748;
+            font-size: 14px;
+        }
+
+        /* ============================================ */
+        /* RESPONSIVE                                  */
+        /* ============================================ */
+
+        @media (max-width: 1024px) {
+            .nav-menu a span {
+                display: none;
+            }
+            .nav-menu a i {
+                margin-right: 0;
+                font-size: 18px;
+            }
+            .btn-publicar span {
+                display: inline !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+            
+            .nav-menu {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .hero-guia h1 {
+                font-size: 28px;
+            }
+
+            .hero-guia p {
+                font-size: 16px;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+
+            .tips-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+
+            .cta-guia {
+                padding: 32px 24px;
+            }
+
+            .cta-guia h2 {
+                font-size: 24px;
+            }
+
+            .step-card {
+                padding: 24px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-guia h1 {
+                font-size: 24px;
+            }
+
+            .step-card {
+                padding: 20px 16px;
+            }
+
+            .step-card h3 {
+                font-size: 17px;
+            }
+
+            .step-card .step-list li {
+                font-size: 13px;
+            }
+
+            .tip-card {
+                padding: 20px 16px;
+            }
+
+            .cta-guia {
+                padding: 24px 16px;
+            }
+
+            .cta-guia h2 {
+                font-size: 20px;
+            }
+
+            .cta-guia p {
+                font-size: 14px;
+            }
+        }

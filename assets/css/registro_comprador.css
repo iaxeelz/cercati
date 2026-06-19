@@ -1,0 +1,514 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f0f2f5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* ============================================ */
+        /* MODAL DE REGISTRO                            */
+        /* ============================================ */
+        
+        .register-modal {
+            max-width: 520px;
+            width: 100%;
+            padding: 40px 35px;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- Header del registro --- */
+        .register-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .register-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a237e;
+            margin-bottom: 4px;
+            letter-spacing: -0.5px;
+        }
+
+        .register-subtitle {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a2332;
+            margin: 8px 0 4px 0;
+        }
+
+        .register-description {
+            font-size: 14px;
+            color: #6b7280;
+            margin: 0;
+        }
+
+        /* --- Foto de perfil --- */
+        .profile-photo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 28px;
+        }
+
+        .profile-photo-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #f3f4f6;
+            border: 3px dashed #d1d5db;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-photo-circle:hover {
+            border-color: #2563eb;
+            transform: scale(1.05);
+        }
+
+        .profile-photo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            color: white;
+        }
+
+        .profile-photo-circle:hover .photo-overlay {
+            opacity: 1;
+        }
+
+        .photo-overlay i {
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+
+        .photo-overlay span {
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .photo-hint {
+            font-size: 12px;
+            color: #9ca3af;
+            margin-top: 8px;
+        }
+
+        /* --- Campos del formulario --- */
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: #1f2937;
+            margin-bottom: 6px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px 12px 44px;
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            color: #1f2937;
+            background: #f9fafb;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-input:focus {
+            border-color: #2563eb;
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-input::placeholder {
+            color: #9ca3af;
+            font-weight: 400;
+        }
+
+        .form-icon {
+            position: absolute;
+            left: 16px;
+            top: 42px;
+            color: #9ca3af;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .form-input:focus + .form-icon,
+        .form-input:focus ~ .form-icon {
+            color: #2563eb;
+        }
+
+        /* --- Campo de contraseña con toggle --- */
+        .password-input-wrapper {
+            position: relative;
+        }
+
+        .password-input-wrapper .form-input {
+            padding-right: 44px;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca3af;
+            cursor: pointer;
+            font-size: 18px;
+            transition: color 0.3s ease;
+            z-index: 2;
+        }
+
+        .toggle-password:hover {
+            color: #2563eb;
+        }
+
+        /* --- Indicador de fuerza de contraseña --- */
+        .password-strength {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .strength-bar {
+            flex: 1;
+            height: 4px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .strength-bar.active.weak {
+            background: #ef4444;
+        }
+
+        .strength-bar.active.medium {
+            background: #f59e0b;
+        }
+
+        .strength-bar.active.strong {
+            background: #22c55e;
+        }
+
+        .strength-text {
+            font-size: 12px;
+            color: #6b7280;
+            min-width: 40px;
+            text-align: right;
+        }
+
+        /* --- Checkbox términos --- */
+        .form-check {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 20px 0;
+            padding: 10px 0;
+        }
+
+        .form-check input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            accent-color: #2563eb;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .form-check label {
+            font-size: 13px;
+            color: #4b5563;
+            line-height: 1.5;
+        }
+
+        .link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .link:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+
+        /* --- Botón Crear cuenta --- */
+        .btn-register {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .btn-register:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-register:active {
+            transform: translateY(0);
+        }
+
+        .btn-register i {
+            font-size: 18px;
+        }
+
+        /* --- Divisor "o continúa con" --- */
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 24px 0;
+            color: #9ca3af;
+            font-size: 13px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #e5e7eb;
+        }
+
+        .divider span {
+            padding: 0 16px;
+            text-transform: lowercase;
+        }
+
+        /* --- Botón Google --- */
+        .btn-google {
+            width: 100%;
+            padding: 12px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #1f2937;
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .btn-google:hover {
+            background: #f9fafb;
+            border-color: #d1d5db;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .google-icon {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        }
+
+        /* SVG de Google inline */
+        .google-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- Footer del registro --- */
+        .register-footer {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .register-footer .link {
+            font-weight: 600;
+        }
+
+        /* --- Estados de validación --- */
+        .form-input.error {
+            border-color: #ef4444;
+            background: #fef2f2;
+        }
+
+        .form-input.success {
+            border-color: #22c55e;
+            background: #f0fdf4;
+        }
+
+        .form-input.success + .form-icon {
+            color: #22c55e;
+        }
+
+        .form-input.error + .form-icon {
+            color: #ef4444;
+        }
+
+        .error-message {
+            font-size: 12px;
+            color: #ef4444;
+            margin-top: 6px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        /* --- Toast de notificación --- */
+        .toast-success,
+        .toast-error {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 16px 24px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            z-index: 9999;
+            max-width: 400px;
+            transform: translateX(120%);
+            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .toast-success.show,
+        .toast-error.show {
+            transform: translateX(0);
+        }
+
+        .toast-success {
+            background: #dcfce7;
+            border-left: 4px solid #22c55e;
+            color: #166534;
+        }
+
+        .toast-success i {
+            color: #22c55e;
+            font-size: 24px;
+        }
+
+        .toast-error {
+            background: #fee2e2;
+            border-left: 4px solid #ef4444;
+            color: #991b1b;
+        }
+
+        .toast-error i {
+            color: #ef4444;
+            font-size: 24px;
+            margin-top: 2px;
+        }
+
+        .toast-error ul {
+            margin: 4px 0 0 0;
+            padding-left: 20px;
+            font-size: 13px;
+        }
+
+        .toast-error ul li {
+            margin: 2px 0;
+        }
+
+        /* --- Responsive para móvil --- */
+        @media (max-width: 640px) {
+            .register-modal {
+                padding: 24px 20px;
+                margin: 16px;
+                border-radius: 16px;
+            }
+
+            .register-title {
+                font-size: 24px;
+            }
+
+            .register-subtitle {
+                font-size: 18px;
+            }
+
+            .profile-photo-circle {
+                width: 80px;
+                height: 80px;
+            }
+
+            .form-input {
+                padding: 10px 14px 10px 40px;
+                font-size: 14px;
+            }
+
+            .form-icon {
+                left: 14px;
+                top: 40px;
+                font-size: 16px;
+            }
+
+            .btn-register {
+                padding: 12px;
+                font-size: 15px;
+            }
+        }
